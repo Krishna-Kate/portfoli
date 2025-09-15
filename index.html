@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna Y. Katekhaye | Portfolio</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #eef2f3, #d9e4ec);
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    header {
+      background: rgba(34, 34, 34, 0.95);
+      color: #fff;
+      padding: 15px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 22px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 500;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 10%;
+      flex-wrap: wrap;
+      min-height: 90vh;
+      background: linear-gradient(to right, #ffffff, #e6f7ff);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      animation: slideUp 1.5s ease-in-out;
+    }
+
+    .hero-text h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .hero-text p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .hero-text .btn {
+      padding: 12px 25px;
+      background: #00aaff;
+      color: #fff;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .hero-text .btn:hover {
+      background: #0077cc;
+      transform: scale(1.05);
+    }
+
+    .hero img {
+      max-width: 350px;
+      border-radius: 50%;
+      border: 5px solid #00aaff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      margin-top: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .hero img:hover {
+      transform: scale(1.08);
+    }
+
+    /* About Section */
+    .about {
+      padding: 60px 10%;
+      text-align: center;
+      background: #f9f9f9;
+    }
+
+    .about h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 16px;
+    }
+
+    /* Projects */
+    .projects {
+      padding: 60px 10%;
+    }
+
+    .projects h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .project h3 {
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .project a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #00aaff;
+      color: #fff;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .project a:hover {
+      background: #0077cc;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 60px 10%;
+      background: #222;
+      color: #fff;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background: #00aaff;
+      border-radius: 30px;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .contact a:hover {
+      background: #0077cc;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #bbb;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Scroll Animations */
+    .section-hidden {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .section-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-hidden {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .project-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact a {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .contact.section-visible a {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text {
+        max-width: 100%;
+      }
+      .hero img {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <h1>Krishna Y. Katekhaye</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h2>Hello, I'm <span style="color:#00aaff;">Krishna Y. Katekhaye</span></h2>
+      <p>A passionate web developer creating modern and responsive designs to make the web a better place.</p>
+      <a href="#projects" class="btn">See My Work</a>
+    </div>
+    <!-- Replace src with your actual photo -->
+    <img src="1757874030572 (1).png" alt="Krishna Y. Katekhaye">
+  </section>
+
+  <!-- About -->
+  <section class="about section-hidden" id="about">
+    <h2>About Me</h2>
+    <p>I am a B.Tech student, currently focusing on my studies in engineering and technology. I have a keen interest in web development and enjoy creating user-friendly and visually appealing websites. In my free time, I like to explore new technologies and work on personal projects to enhance my skills.</p>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects section-hidden" id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project project-hidden">
+        <h3>EduSafe</h3>
+        <p>A disaster education and response platform.</p>
+        <a href="https://edu-safe-800066b1.base44.app/" target="_blank">View Live</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact section-hidden" id="contact">
+    <h2>Contact Me</h2>
+    <a href="https://www.instagram.com/?utm_source=pwa_homescreen&__pwa=1">Instgram</a>
+    <a href="https://www.linkedin.com/in/krishna-katekhaye-863b8b315/" target="_blank">LinkedIn</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Krishna Y. Katekhaye | All Rights Reserved</p>
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.section-hidden');
+    const projects = document.querySelectorAll('.project-hidden');
+    const contactSection = document.querySelector('.contact.section-hidden');
+
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-visible');
+          entry.target.classList.remove('section-hidden');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+
+    const projectObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('project-visible');
+          entry.target.classList.remove('project-hidden');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    projects.forEach(project => {
+      projectObserver.observe(project);
+    });
+
+    if (contactSection) {
+      sectionObserver.observe(contactSection);
+    }
+  });
+</script>
+</body>
+</html>
